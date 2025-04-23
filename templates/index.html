@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DDOS Anomaly Detection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: url('/static/bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        .header, .footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            font-weight: 600;
+            font-size: 1.3rem;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px 40px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        input[type="text"], button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        input[type="text"] {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+        input::placeholder {
+            color: #ddd;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .prediction {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #00f7ff;
+            text-align: center;
+        }
+        .footer {
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        Capstone Project: DDOS Anomaly Detection in Software Defined Networks
+    </div>
+
+    <div class="container">
+        <div class="glass">
+            <form method="POST">
+                <input type="text" name="serror_rate" placeholder="Serror Rate" required>
+                <input type="text" name="srv_serror_rate" placeholder="SRV Serror Rate" required>
+                <input type="text" name="same_srv_rate" placeholder="Same SRV Rate" required>
+                <input type="text" name="dst_host_serror_rate" placeholder="Dst Host Serror Rate" required>
+                <input type="text" name="dst_host_srv_serror_rate" placeholder="Dst Host SRV Serror Rate" required>
+                <button type="submit">Predict</button>
+            </form>
+
+            <div class="prediction">
+                Prediction: {{ prediction }}
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Made by Aryaman and Varad
+    </div>
+
+</body>
+</html>
